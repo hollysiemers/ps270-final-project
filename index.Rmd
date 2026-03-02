@@ -13,3 +13,15 @@ output:
 
 I am interested in exploring data related to...misinformation on social media and how it effects political polarization. Does the misinformation increase it? Or how protests affect policy change.
 
+## Project Milestone 2
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+```{r}
+wag <- read_csv("women-averages-global--2026-01--export--260227-010234--EN.csv")
+wag
+```
+Is there a positive relationship between a country’s level of democracy and the percentage of women in its national legislature? In his study I will examine the correlation between countries with democracy and how many women are in office nationally in those countries. My hypothesis is: Countries with higher levels of democracy will have higher percentages of women in parliament. My explanatory variable is democracy level. I will be using the v-dem study for this. (which I will add later as the file is loading very large). They measure democracy on a 0-1 scale, with higher values being more democratic. My outcome variable is the percentage of women in national legislatures, which I will find with the IPU Paraline data on women. They measure the percentage of women by dividing the number of women seats by the total seats and multiplying it by 100. (it is a 0-100 scale). A pattern that would show support for my hypothesis would be a positive correlation between democracy and women in office. Some things that would show disapproval of my hypothesis would be if there was no statistical correlation between the two variables or if democratic countries show low % of women in office.
+
