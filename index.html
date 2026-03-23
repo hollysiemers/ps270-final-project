@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","women-averages-global--2026-01--export--260227-010234--EN.csv"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","proportion-of-seats-held-by-women-in-national-parliaments-2/Proportion of seats held by women in national parliaments (%).csv","women_in_parliament-historical_database-1945_to_2018.numbers","women-averages-global--2026-01--export--260227-010234--EN.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1555,34 +1555,46 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>wag</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"women-averages-global--2026-01--export--260227-010234--EN.csv"</span><span class='op'>)</span></span>
-<span><span class='va'>wag</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>wnp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"proportion-of-seats-held-by-women-in-national-parliaments-2/Proportion of seats held by women in national parliaments (%).csv"</span><span class='op'>)</span></span>
+<span><span class='va'>wnp</span></span></code></pre>
 </div>
-<pre><code># A tibble: 18 × 4
-   Title                        Global and regional aver…¹ ...3  ...4 
-   &lt;chr&gt;                        &lt;chr&gt;                      &lt;chr&gt; &lt;chr&gt;
- 1 &quot;Reference period&quot;           &quot;January 2026&quot;             &lt;NA&gt;  &lt;NA&gt; 
- 2 &quot;Structure&quot;                  &quot;-&quot;                        &lt;NA&gt;  &lt;NA&gt; 
- 3 &quot;Region&quot;                     &quot;Any&quot;                      &lt;NA&gt;  &lt;NA&gt; 
- 4 &quot;Publisher&quot;                  &quot;Inter-Parliamentary Unio… &lt;NA&gt;  &lt;NA&gt; 
- 5 &quot;Copyright and attribution&quot;  &quot;Inter-Parliamentary Unio… &lt;NA&gt;  &lt;NA&gt; 
- 6 &quot;Licence&quot;                    &quot;This work is licensed un… &lt;NA&gt;  &lt;NA&gt; 
- 7 &quot;Website&quot;                    &quot;https://data.ipu.org/wom… &lt;NA&gt;  &lt;NA&gt; 
- 8 &quot;URL&quot;                        &quot;https://data.ipu.org/exp… &lt;NA&gt;  &lt;NA&gt; 
- 9 &quot;API URL&quot;                    &quot;http://api.data.ipu.org/… &lt;NA&gt;  &lt;NA&gt; 
-10 &quot;Data dictionary&quot;            &quot;https://data.ipu.org/dat… &lt;NA&gt;  &lt;NA&gt; 
-11 &quot;Date accessed&quot;              &quot;2026-02-27 01:02:35&quot;      &lt;NA&gt;  &lt;NA&gt; 
-12 &quot;\n&quot;                          &lt;NA&gt;                      &lt;NA&gt;  &lt;NA&gt; 
-13  &lt;NA&gt;                        &quot;Lower chamber and unicam… Uppe… All …
-14 &quot;Total MPs&quot;                  &quot;36920&quot;                    7141  44061
-15 &quot;Gender breakdown known for&quot; &quot;36854&quot;                    7141  43995
-16 &quot;Men&quot;                        &quot;26759&quot;                    5153  31912
-17 &quot;Women&quot;                      &quot;10095&quot;                    1988  12083
-18 &quot;Percentage of women&quot;        &quot;27.4%&quot;                    27.8% 27.5%
-# ℹ abbreviated name:
-#   ¹​`Global and regional averages of women in national parliaments`</code></pre>
+<pre><code># A tibble: 6,360 × 7
+   `Indicator Name`     `Indicator Code` `Country Name` `Country Code`
+   &lt;chr&gt;                &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;         
+ 1 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+ 2 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+ 3 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+ 4 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+ 5 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+ 6 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+ 7 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+ 8 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+ 9 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+10 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
+# ℹ 6,350 more rows
+# ℹ 3 more variables: Year &lt;dbl&gt;, Value &lt;dbl&gt;, Disaggregation &lt;lgl&gt;</code></pre>
 </div>
-<p>Is there a positive relationship between a country’s level of democracy and the percentage of women in its national legislature? In his study I will examine the correlation between countries with democracy and how many women are in office nationally in those countries. My hypothesis is: Countries with higher levels of democracy will have higher percentages of women in parliament. My explanatory variable is democracy level. I will be using the v-dem study for this. (which I will add later as the file is loading very large). They measure democracy on a 0-1 scale, with higher values being more democratic. My outcome variable is the percentage of women in national legislatures, which I will find with the IPU Paraline data on women. They measure the percentage of women by dividing the number of women seats by the total seats and multiplying it by 100. (it is a 0-100 scale). A pattern that would show support for my hypothesis would be a positive correlation between democracy and women in office. Some things that would show disapproval of my hypothesis would be if there was no statistical correlation between the two variables or if democratic countries show low % of women in office.</p>
+<p>Is there a positive relationship between a country’s level of democracy and the percentage of women in its national legislature? In his study I will examine the correlation between countries with democracy and how many women are in office nationally in those countries. My hypothesis is: Countries with higher levels of democracy will have higher percentages of women in parliament. My explanatory variable is democracy level. I will be using the v-dem study for this. (which I will add later as the file is loading very large). They measure democracy on a 0-1 scale, with higher values being more democratic. My outcome variable is the percentage of women in national legislatures, which I will find with the World Bank data on women in national legislatures.. They measure the percentage of women by dividing the number of women seats by the total seats and multiplying it by 100. (it is a 0-100 scale). A pattern that would show support for my hypothesis would be a positive correlation between democracy and women in office. Some things that would show disapproval of my hypothesis would be if there was no statistical correlation between the two variables or if democratic countries show low % of women in office.</p>
+<h2 id="milestone-3">Milestone 3</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>global_trend</span> <span class='op'>&lt;-</span> <span class='va'>wnp</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Year</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>avg_women <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>Value</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>global_trend</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Year</span>, y <span class='op'>=</span> <span class='va'>avg_women</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>1.2</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>se <span class='op'>=</span> <span class='cn'>FALSE</span>, linetype <span class='op'>=</span> <span class='st'>"dashed"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Global Trends in Women's Representation in Parliament"</span>,</span>
+<span>    subtitle <span class='op'>=</span> <span class='st'>"Average percentage of seats held by women over time"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Year"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Percent of Seats Held by Women"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" alt="" width="624" /></p>
+</div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
