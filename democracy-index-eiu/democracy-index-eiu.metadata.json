@@ -1,0 +1,56 @@
+{
+  "chart": {
+    "title": "Democracy Index",
+    "subtitle": "Data by the [Economist Intelligence Unit](#dod:economist-intelligence-unit). Expert estimates of the extent to which citizens can choose their political leaders in free and fair elections, enjoy civil liberties, prefer democracy over other political systems, can and do participate in politics, and have a functioning government that acts on their behalf. The index ranges from 0 to 10 (most democratic).",
+    "citation": "Economist Intelligence Unit (2006-2024)",
+    "originalChartUrl": "https://ourworldindata.org/grapher/democracy-index-eiu?v=1&csvType=full&useColumnShortNames=false",
+    "selection": [
+      "Argentina",
+      "Australia",
+      "Botswana",
+      "China"
+    ]
+  },
+  "columns": {
+    "Democracy index": {
+      "titleShort": "Democracy index",
+      "titleLong": "Democracy index - Economist Intelligence Unit",
+      "descriptionShort": "Extent to which citizens can choose their political leaders in free and fair elections, enjoy civil liberties, prefer democracy over other political systems, can and do participate in politics, and have a functioning government that acts on their behalf. It ranges from 0 to 10 (most democratic).",
+      "descriptionKey": [
+        "This index, produced by the Economist Intelligence Unit (EIU), is useful if you are interested in recent trends, want scores for almost all countries, and prefer a broad understanding of democracy. For data that covers the more distant past or focuses on more specific aspects of democracy, other sources will be more useful. You can explore these alternatives in our [Key Democracy Charts](https://ourworldindata.org/democracy#all-charts) and [Democracy Data Explorer](https://ourworldindata.org/explorers/democracy?Dataset=Varieties+of+Democracy&Metric=Electoral+democracy&Sub-metric=Main+index&country=ARG~AUS~BWA~CHN~OWID_WRL).",
+        "It takes a broad view of democracy, by including several dimensions: electoral (free and fair elections), liberal (civil rights and protection from the state), participatory (citizens engage in elections), deliberative (citizens engage in civil society and public discourse), and effective (governments can act on citizens' behalf).",
+        "The index is based mainly on assessments by the EIU’s country experts. It also uses representative surveys of regular citizens.",
+        "It is made up of five sub-indices: [electoral pluralism](https://ourworldindata.org/explorers/democracy?Dataset=Economist+Intelligence+Unit&Metric=Electoral+democracy&Sub-metric=Electoral+pluralism+index&country=ARG~AUS~BWA~CHN~OWID_WRL), [civil liberties](https://ourworldindata.org/explorers/democracy?Dataset=Economist+Intelligence+Unit&Metric=Electoral+democracy&Sub-metric=%C2%ADCivil+liberties+index&country=ARG~AUS~BWA~CHN~OWID_WRL), [political participation](https://ourworldindata.org/explorers/democracy?Dataset=Economist+Intelligence+Unit&Metric=Electoral+democracy&Sub-metric=%C2%ADPolitical+participation+index&country=ARG~AUS~BWA~CHN~OWID_WRL), [democratic culture](https://ourworldindata.org/explorers/democracy?Dataset=Economist+Intelligence+Unit&Metric=Electoral+democracy&Sub-metric=Democratic+culture+index&country=ARG~AUS~BWA~CHN~OWID_WRL), and [functioning government](https://ourworldindata.org/explorers/democracy?Dataset=Economist+Intelligence+Unit&Metric=Electoral+democracy&Sub-metric=Functioning+government+index&country=ARG~AUS~BWA~CHN~OWID_WRL).",
+        "The index is also available as a [classification](https://ourworldindata.org/explorers/democracy?Dataset=Economist+Intelligence+Unit&Metric=Electoral+democracy&Sub-metric=Political+regime&country=ARG~AUS~BWA~CHN~OWID_WRL) that groups countries into full democracies, flawed democracies, hybrid regimes, and authoritarian regimes.",
+        "**Why this matters:**\n\n- Democracy shapes how we live, how we can express our ideas, and how governments respond to our needs. Where it thrives, people enjoy more freedom, dignity, and security. Where it breaks down, they often face oppression, injustice, and instability.\n- A century ago, democracy existed in only a few countries. Today, most have built more open and accountable political systems. But progress is fragile: many still struggle to build stable democratic institutions.\n- This data shows how countries compare: where democracy is strong, where it is weak, and where more progress is needed."
+      ],
+      "descriptionProcessing": "We source the data from Gapminder for the years 2006 to 2020, and directly from the Economist Intelligence Unit for more recent years.\n\nFor the world as a whole and for each region (as [defined by us](https://ourworldindata.org/grapher/continents-according-to-our-world-in-data)), we calculate both simple country averages and [population-weighted](https://ourworldindata.org/explorers/democracy?country=OWID_WRL~OWID_AFR~OWID_ASI~OWID_EUR~OWID_NAM~OWID_OCE~OWID_SAM&Dataset=Economist+Intelligence+Unit&Metric=Electoral+democracy&Sub-metric=%C2%AD%C2%AD%C2%AD%C2%AD%C2%AD%C2%AD%C2%ADMain+index+weighted+by+population) averages. A population-weighted average assigns more weight to countries with larger populations, so that the results better reflect the experiences of the average person.",
+      "unit": "",
+      "timespan": "2006-2024",
+      "type": "Numeric",
+      "owidVariableId": 1014800,
+      "shortName": "democracy_eiu",
+      "lastUpdated": "2025-03-05",
+      "nextUpdate": "2026-05-12",
+      "citationShort": "Economist Intelligence Unit (2006-2024) – processed by Our World in Data",
+      "citationLong": "Economist Intelligence Unit (2006-2024) – processed by Our World in Data. “Democracy index – Economist Intelligence Unit” [dataset]. Economist Intelligence Unit, “Democracy Index 2021: The China challenge”; Economist Intelligence Unit, “Democracy Index 2022: Frontline democracy and the battle for Ukraine”; Economist Intelligence Unit, “Democracy Index 2023: Age of Conflict”; Economist Intelligence Unit, “Democracy Index 2024: What's wrong with representative democracy?”; Gapminder, “Democracy Index v4”; Various sources, “Population” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/1014800.metadata.json"
+    },
+    "World region according to OWID": {
+      "titleShort": "World region according to OWID",
+      "titleLong": "World region according to OWID",
+      "descriptionShort": "Regions defined by Our World in Data, which are used in OWID charts and maps.",
+      "unit": "",
+      "timespan": "2023-2023",
+      "type": "Continent",
+      "owidVariableId": 900801,
+      "shortName": "owid_region",
+      "lastUpdated": "2023-01-01",
+      "citationShort": "Our World in Data – processed by Our World in Data",
+      "citationLong": "Our World in Data – processed by Our World in Data. “World region according to OWID” [dataset]. Our World in Data, “Regions” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/900801.metadata.json"
+    }
+  },
+  "dateDownloaded": "2026-04-12",
+  "activeFilters": {}
+}
