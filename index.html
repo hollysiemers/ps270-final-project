@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","proportion-of-seats-held-by-women-in-national-parliaments-2/Proportion of seats held by women in national parliaments (%).csv","women_in_parliament-historical_database-1945_to_2018.numbers","women-averages-global--2026-01--export--260227-010234--EN.csv"]}
+  {"type":"character","attributes":{},"value":["democracy-index-eiu/democracy-index-eiu.csv","democracy-index-eiu/democracy-index-eiu.metadata.json","democracy-index-eiu/readme.md","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-11-1.png","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","index-2_files/anchor-4.2.2/anchor.min.js","index-2_files/bowser-1.9.3/bowser.min.js","index-2_files/distill-2.2.21/template.v2.js","index-2_files/figure-html5/unnamed-chunk-11-1.png","index-2_files/header-attrs-2.30/header-attrs.js","index-2_files/jquery-3.6.0/jquery-3.6.0.js","index-2_files/jquery-3.6.0/jquery-3.6.0.min.js","index-2_files/jquery-3.6.0/jquery-3.6.0.min.map","index-2_files/popper-2.6.0/popper.min.js","index-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","index-2_files/tippy-6.2.7/tippy-light-border.css","index-2_files/tippy-6.2.7/tippy.css","index-2_files/tippy-6.2.7/tippy.umd.min.js","index-2_files/webcomponents-2.0.0/webcomponents.js","index-2.html","proportion-of-seats-held-by-women-in-national-parliaments-2/Proportion of seats held by women in national parliaments (%).csv","World Bank Women in National Parliaments - Sheet1.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1550,52 +1550,317 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
-<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readr.tidyverse.org'>readr</a></span><span class='op'>)</span></span></code></pre>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readr.tidyverse.org'>readr</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://stringr.tidyverse.org'>stringr</a></span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>wnp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"proportion-of-seats-held-by-women-in-national-parliaments-2/Proportion of seats held by women in national parliaments (%).csv"</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>wnp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"World Bank Women in National Parliaments - Sheet1.csv"</span><span class='op'>)</span></span>
 <span><span class='va'>wnp</span></span></code></pre>
 </div>
-<pre><code># A tibble: 6,360 × 7
-   `Indicator Name`     `Indicator Code` `Country Name` `Country Code`
-   &lt;chr&gt;                &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;         
- 1 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
- 2 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
- 3 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
- 4 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
- 5 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
- 6 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
- 7 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
- 8 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
- 9 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
-10 Proportion of seats… SG.GEN.PARL.ZS   Africa Easter… AFE           
-# ℹ 6,350 more rows
-# ℹ 3 more variables: Year &lt;dbl&gt;, Value &lt;dbl&gt;, Disaggregation &lt;lgl&gt;</code></pre>
+<pre><code># A tibble: 217 × 3
+   Economy              Year Proportion of seats held by women in na…¹
+   &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;                                    
+ 1 Afghanistan          2021 27%                                      
+ 2 Albania              2024 35.70%                                   
+ 3 Algeria              2024 7.90%                                    
+ 4 American Samoa       2024 N/A                                      
+ 5 Andorra              2024 50%                                      
+ 6 Angola               2024 39.50%                                   
+ 7 Antigua and Barbuda  2024 5.60%                                    
+ 8 Argentina            2024 42.40%                                   
+ 9 Armenia              2024 36.40%                                   
+10 Aruba                2024 N/A                                      
+# ℹ 207 more rows
+# ℹ abbreviated name:
+#   ¹​`Proportion of seats held by women in national parliaments (%)`</code></pre>
 </div>
-<p>Is there a positive relationship between a country’s level of democracy and the percentage of women in its national legislature? In his study I will examine the correlation between countries with democracy and how many women are in office nationally in those countries. My hypothesis is: Countries with higher levels of democracy will have higher percentages of women in parliament. My explanatory variable is democracy level. I will be using the v-dem study for this. (which I will add later as the file is loading very large). They measure democracy on a 0-1 scale, with higher values being more democratic. My outcome variable is the percentage of women in national legislatures, which I will find with the World Bank data on women in national legislatures.. They measure the percentage of women by dividing the number of women seats by the total seats and multiplying it by 100. (it is a 0-100 scale). A pattern that would show support for my hypothesis would be a positive correlation between democracy and women in office. Some things that would show disapproval of my hypothesis would be if there was no statistical correlation between the two variables or if democratic countries show low % of women in office.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>democracy_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>"democracy-index-eiu/democracy-index-eiu.csv"</span><span class='op'>)</span></span>
+<span><span class='va'>democracy_index</span></span></code></pre>
+</div>
+<pre><code># A tibble: 3,077 × 5
+   Entity      Code   Year `Democracy Index` World region according …¹
+   &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;                    
+ 1 Afghanistan AFG    2006              3.06 Asia                     
+ 2 Afghanistan AFG    2008              3.02 Asia                     
+ 3 Afghanistan AFG    2010              2.48 Asia                     
+ 4 Afghanistan AFG    2011              2.48 Asia                     
+ 5 Afghanistan AFG    2012              2.48 Asia                     
+ 6 Afghanistan AFG    2013              2.48 Asia                     
+ 7 Afghanistan AFG    2014              2.77 Asia                     
+ 8 Afghanistan AFG    2015              2.77 Asia                     
+ 9 Afghanistan AFG    2016              2.55 Asia                     
+10 Afghanistan AFG    2017              2.55 Asia                     
+# ℹ 3,067 more rows
+# ℹ abbreviated name: ¹​`World region according to OWID`</code></pre>
+</div>
+<p>Is there a positive relationship between a country’s level of democracy and the percentage of women in its national legislature? In his study I will examine the correlation between countries with democracy and how many women are in office nationally in those countries. My hypothesis is: Countries with higher levels of democracy will have higher percentages of women in parliament. My explanatory variable is democracy level. I will be using the Our World in Data study for this. They measure democracy on a 0-10 scale, with higher values being more democratic. My outcome variable is the percentage of women in national legislatures, which I will find with the World Bank data on women in national legislatures. They measure the percentage of women by dividing the number of women seats by the total seats and multiplying it by 100. (it is a 0-100 scale). A pattern that would show support for my hypothesis would be a positive correlation between democracy and women in office. Some things that would show disapproval of my hypothesis would be if there was no statistical correlation between the two variables or if democratic countries show low % of women in office. This question is important because representation in government is a key component of political equality. If more democratic countries tend to elect more women, this suggests that democratic institutions may help reduce gender inequality in politics.</p>
 <h2 id="milestone-3">Milestone 3</h2>
+<p>Was deleted.</p>
+<h2 id="milestone-4">Milestone 4</h2>
+<p>In this milestone I need to compile all my data together now that I have both needed data sets. I will focus on the most recent year in each data set which is 2024.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>global_trend</span> <span class='op'>&lt;-</span> <span class='va'>wnp</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Year</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>avg_women <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>Value</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>wnp</span> <span class='op'>&lt;-</span> <span class='va'>wnp</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>Country <span class='op'>=</span> <span class='va'>Economy</span><span class='op'>)</span></span>
+<span><span class='va'>democracy_index</span> <span class='op'>&lt;-</span> <span class='va'>democracy_index</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>Country <span class='op'>=</span> <span class='va'>Entity</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>global_trend</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Year</span>, y <span class='op'>=</span> <span class='va'>avg_women</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>1.2</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>se <span class='op'>=</span> <span class='cn'>FALSE</span>, linetype <span class='op'>=</span> <span class='st'>"dashed"</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Global Trends in Women's Representation in Parliament"</span>,</span>
-<span>    subtitle <span class='op'>=</span> <span class='st'>"Average percentage of seats held by women over time"</span>,</span>
-<span>    x <span class='op'>=</span> <span class='st'>"Year"</span>,</span>
-<span>    y <span class='op'>=</span> <span class='st'>"Percent of Seats Held by Women"</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>democracy_wnp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>wnp</span>, <span class='va'>democracy_index</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Country"</span>, <span class='st'>"Year"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span><span class='va'>democracy_wnp</span></span></code></pre>
 </div>
-<p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" alt="" width="624" /></p>
+<pre><code># A tibble: 217 × 6
+   Country         Year Proportion of seats …¹ Code  `Democracy Index`
+   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;                  &lt;chr&gt;             &lt;dbl&gt;
+ 1 Afghanistan     2021 27%                    AFG                0.32
+ 2 Albania         2024 35.70%                 ALB                6.2 
+ 3 Algeria         2024 7.90%                  DZA                3.55
+ 4 American Samoa  2024 N/A                    &lt;NA&gt;              NA   
+ 5 Andorra         2024 50%                    &lt;NA&gt;              NA   
+ 6 Angola          2024 39.50%                 AGO                4.05
+ 7 Antigua and B…  2024 5.60%                  &lt;NA&gt;              NA   
+ 8 Argentina       2024 42.40%                 ARG                6.51
+ 9 Armenia         2024 36.40%                 ARM                5.35
+10 Aruba           2024 N/A                    &lt;NA&gt;              NA   
+# ℹ 207 more rows
+# ℹ abbreviated name:
+#   ¹​`Proportion of seats held by women in national parliaments (%)`
+# ℹ 1 more variable: `World region according to OWID` &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>democracy_wnp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/na.fail.html'>na.omit</a></span><span class='op'>(</span><span class='va'>democracy_wnp</span><span class='op'>)</span></span>
+<span><span class='va'>democracy_wnp</span></span></code></pre>
+</div>
+<pre><code># A tibble: 147 × 6
+   Country      Year Proportion of seats hel…¹ Code  `Democracy Index`
+   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;                     &lt;chr&gt;             &lt;dbl&gt;
+ 1 Afghanistan  2021 27%                       AFG                0.32
+ 2 Albania      2024 35.70%                    ALB                6.2 
+ 3 Algeria      2024 7.90%                     DZA                3.55
+ 4 Angola       2024 39.50%                    AGO                4.05
+ 5 Argentina    2024 42.40%                    ARG                6.51
+ 6 Armenia      2024 36.40%                    ARM                5.35
+ 7 Australia    2024 38%                       AUS                8.85
+ 8 Austria      2024 36.10%                    AUT                8.28
+ 9 Azerbaijan   2024 20.80%                    AZE                2.8 
+10 Bahrain      2024 20%                       BHR                2.45
+# ℹ 137 more rows
+# ℹ abbreviated name:
+#   ¹​`Proportion of seats held by women in national parliaments (%)`
+# ℹ 1 more variable: `World region according to OWID` &lt;chr&gt;</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>democracy_wnp</span> <span class='op'>&lt;-</span> <span class='va'>democracy_wnp</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>Prop_Seats <span class='op'>=</span> <span class='st'>"Proportion of seats held by women in national parliaments (%)"</span>, Democracy_Index <span class='op'>=</span> <span class='st'>"Democracy Index"</span><span class='op'>)</span></span>
+<span><span class='va'>democracy_wnp</span></span></code></pre>
+</div>
+<pre><code># A tibble: 147 × 6
+   Country      Year Prop_Seats Code  Democracy_Index
+   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;
+ 1 Afghanistan  2021 27%        AFG              0.32
+ 2 Albania      2024 35.70%     ALB              6.2 
+ 3 Algeria      2024 7.90%      DZA              3.55
+ 4 Angola       2024 39.50%     AGO              4.05
+ 5 Argentina    2024 42.40%     ARG              6.51
+ 6 Armenia      2024 36.40%     ARM              5.35
+ 7 Australia    2024 38%        AUS              8.85
+ 8 Austria      2024 36.10%     AUT              8.28
+ 9 Azerbaijan   2024 20.80%     AZE              2.8 
+10 Bahrain      2024 20%        BHR              2.45
+# ℹ 137 more rows
+# ℹ 1 more variable: `World region according to OWID` &lt;chr&gt;</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span></span>
+<span><span class='va'>democracy_wnp</span> <span class='op'>&lt;-</span> <span class='va'>democracy_wnp</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Year</span> <span class='op'>==</span> <span class='fl'>2024</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<h2 id="milestone-4-continued">Milestone 4 Continued</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span> <span class='va'>democracy_wnp</span> <span class='op'>&lt;-</span> </span>
+<span>  <span class='va'>democracy_wnp</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span></span>
+<span>    <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>Democracy_Index</span><span class='op'>)</span>,</span>
+<span>    <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>Prop_Seats</span><span class='op'>)</span></span>
+<span>  <span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Prop_Seats <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='va'>Prop_Seats</span>, <span class='st'>"%"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
+<span><span class='va'>democracy_wnp</span></span></code></pre>
+</div>
+<pre><code># A tibble: 139 × 6
+   Country     Year Prop_Seats Code  Democracy_Index
+   &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+ 1 Albania     2024       35.7 ALB              6.2 
+ 2 Algeria     2024        7.9 DZA              3.55
+ 3 Angola      2024       39.5 AGO              4.05
+ 4 Argentina   2024       42.4 ARG              6.51
+ 5 Armenia     2024       36.4 ARM              5.35
+ 6 Australia   2024       38   AUS              8.85
+ 7 Austria     2024       36.1 AUT              8.28
+ 8 Azerbaijan  2024       20.8 AZE              2.8 
+ 9 Bahrain     2024       20   BHR              2.45
+10 Belarus     2024       33.6 BLR              1.99
+# ℹ 129 more rows
+# ℹ 1 more variable: `World region according to OWID` &lt;chr&gt;</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>democracy_wnp</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Prop_Seats</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>bins <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"Distribution of Women's Representation in National Parliaments"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Percentage of Seats Held by Women"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Number of Countries"</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>This anaylsis uses a cross-sectional research design; it compares countries at a single point in time (2024). The data combines two sources: The World Bank dataset on women in national legislatures and the Democracy Index, which was accessed through Our World in Data. The data set, which was merged, includes 139 countries. It allows for a look into the relationship between democracy and women represented in politics. The dependent variable in this study is the percentage of seats held by women in national legislatures. It is calculated by seats held by women divided by total number of seats, multiplied by 100. The scale is 0-100. The independent variable is the country’s level of democracy, found through using the Democracy Index. The index is made through assessments of elected political leaders, elections, voting rights, freedom of expression, and freedom of association. The score ranges from 0-10. (10 being more democratic).</p>
+<p>The figure above displays the distribution of the percentage of women in national parliaments across countries. The distribution looks unimodal, as most countries are clustered around the 20-40% mark. The center of the distribution looks to be around the 30% mark, which means that women hold around a third of legislative seats in most countries. Though, there is a range of percentages, some countries have below 20% and some have above 50%. The distribution indicates that women remain underrepresented in many countries.</p>
+<p>Support for my hypothesis would be shown by a positive relationship between democracy levels and the percentage of women in parliament. This means that the more democratic a country is, the higher levels of women they would have represented. A rejection for my hypothesis would be shown by little to no relationship between democracy and percentage of women in parliament. Meaning that the higher levels of democracy a country has is not associated with more representation of women in legislatures.</p>
+<h2 id="results-section">Results Section</h2>
+<p>Scatter plot, regression, and analysis</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>democracy_wnp</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Democracy_Index</span>, y<span class='op'>=</span> <span class='va'>Prop_Seats</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"lm"</span>, se <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"Relationship Between Democracy and Women's Representation in Gov't"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Democracy Level (0-10)"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Women in Parliament (%)"</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-11-1.png" alt="" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://modelsummary.com'>modelsummary</a></span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>Prop_Seats</span> <span class='op'>~</span> <span class='va'>Democracy_Index</span>, data <span class='op'>=</span> <span class='va'>democracy_wnp</span><span class='op'>)</span></span>
+<span><span class='va'>model</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = Prop_Seats ~ Democracy_Index, data = democracy_wnp)
+
+Coefficients:
+    (Intercept)  Democracy_Index  
+          21.41             1.22  </code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = Prop_Seats ~ Democracy_Index, data = democracy_wnp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-25.991  -7.859  -0.184   8.357  38.317 
+
+Coefficients:
+                Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      21.4078     2.6194   8.173  1.8e-13 ***
+Democracy_Index   1.2200     0.4376   2.788  0.00606 ** 
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 11.85 on 137 degrees of freedom
+Multiple R-squared:  0.05369,   Adjusted R-squared:  0.04678 
+F-statistic: 7.773 on 1 and 137 DF,  p-value: 0.006058</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://modelsummary.com/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>model</span>,</span>
+<span>             fmt <span class='op'>=</span> <span class='fl'>2</span>,</span>
+<span>             stars <span class='op'>=</span> <span class='cn'>T</span>,</span>
+<span>             title <span class='op'>=</span> <span class='st'>"Regression Results of Democracy and Women's Representation"</span></span>
+<span>          <span class='op'>)</span></span></code></pre>
+</div>
+<table style="width:40%;">
+<caption>Regression Results of Democracy and Women’s Representation</caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><ol type="1">
+<li></li>
+</ol></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td>21.41***</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>(2.62)</td>
+</tr>
+<tr class="odd">
+<td>Democracy_Index</td>
+<td>1.22**</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>(0.44)</td>
+</tr>
+<tr class="odd">
+<td>Num.Obs.</td>
+<td>139</td>
+</tr>
+<tr class="even">
+<td>R2</td>
+<td>0.054</td>
+</tr>
+<tr class="odd">
+<td>R2 Adj.</td>
+<td>0.047</td>
+</tr>
+<tr class="even">
+<td>AIC</td>
+<td>1085.7</td>
+</tr>
+<tr class="odd">
+<td>BIC</td>
+<td>1094.5</td>
+</tr>
+<tr class="even">
+<td>Log.Lik.</td>
+<td>-539.837</td>
+</tr>
+<tr class="odd">
+<td>RMSE</td>
+<td>11.76</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td colspan="2"><ul>
+<li>p &lt; 0.1, * p &lt; 0.05, <strong>
+p &lt; 0.01, </strong>* p &lt; 0.001</li>
+</ul></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

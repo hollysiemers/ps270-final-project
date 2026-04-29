@@ -17,28 +17,116 @@ I am interested in exploring data related to...misinformation on social media an
 ```{r}
 library(tidyverse)
 library(readr)
+library(stringr)
 ```
 
 ```{r}
-wnp <- read_csv("proportion-of-seats-held-by-women-in-national-parliaments-2/Proportion of seats held by women in national parliaments (%).csv")
+wnp <- read_csv("World Bank Women in National Parliaments - Sheet1.csv")
 wnp
 ```
-Is there a positive relationship between a country’s level of democracy and the percentage of women in its national legislature? In his study I will examine the correlation between countries with democracy and how many women are in office nationally in those countries. My hypothesis is: Countries with higher levels of democracy will have higher percentages of women in parliament. My explanatory variable is democracy level. I will be using the v-dem study for this. (which I will add later as the file is loading very large). They measure democracy on a 0-1 scale, with higher values being more democratic. My outcome variable is the percentage of women in national legislatures, which I will find with the World Bank data on women in national legislatures.. They measure the percentage of women by dividing the number of women seats by the total seats and multiplying it by 100. (it is a 0-100 scale). A pattern that would show support for my hypothesis would be a positive correlation between democracy and women in office. Some things that would show disapproval of my hypothesis would be if there was no statistical correlation between the two variables or if democratic countries show low % of women in office.
+```{r}
+democracy_index <- read_csv("democracy-index-eiu/democracy-index-eiu.csv")
+democracy_index
+```
+
+Is there a positive relationship between a country’s level of democracy and the percentage of women in its national legislature? In his study I will examine the correlation between countries with democracy and how many women are in office nationally in those countries. My hypothesis is: Countries with higher levels of democracy will have higher percentages of women in parliament. My explanatory variable is democracy level. I will be using the Our World in Data study for this. They measure democracy on a 0-10 scale, with higher values being more democratic. My outcome variable is the percentage of women in national legislatures, which I will find with the World Bank data on women in national legislatures. They measure the percentage of women by dividing the number of women seats by the total seats and multiplying it by 100. (it is a 0-100 scale). A pattern that would show support for my hypothesis would be a positive correlation between democracy and women in office. Some things that would show disapproval of my hypothesis would be if there was no statistical correlation between the two variables or if democratic countries show low % of women in office. This question is important because representation in government is a key component of political equality. If more democratic countries tend to elect more women, this suggests that democratic institutions may help reduce gender inequality in politics.
+
 
 ## Milestone 3
 
+Was deleted. 
+
+## Milestone 4
+
+In this milestone I need to compile all my data together now that I have both needed data sets. I will focus on the most recent year in each data set which is 2024. 
+
 ```{r}
-global_trend <- wnp |>
-  group_by(Year) |>
-  summarize(avg_women = mean(Value, na.rm = TRUE))
+wnp <- wnp |> rename(Country = Economy)
+democracy_index <- democracy_index |> rename(Country = Entity)
+```
+
+
+```{r}
+democracy_wnp <- left_join(wnp, democracy_index, by = c("Country", "Year"))
+democracy_wnp
+```
+
+
+```{r}
+democracy_wnp <- na.omit(democracy_wnp)
+democracy_wnp
 ```
 ```{r}
-ggplot(global_trend, aes(x = Year, y = avg_women)) +
-  geom_line(size = 1.2) +
-  geom_smooth(se = FALSE, linetype = "dashed") +
-  labs(title = "Global Trends in Women's Representation in Parliament",
-    subtitle = "Average percentage of seats held by women over time",
-    x = "Year",
-    y = "Percent of Seats Held by Women")
+democracy_wnp <- democracy_wnp |> 
+  rename(Prop_Seats = "Proportion of seats held by women in national parliaments (%)", Democracy_Index = "Democracy Index")
+democracy_wnp
 ```
+```{r}
+library(dplyr)
+democracy_wnp <- democracy_wnp |>
+  filter(Year == 2024)
+```
+
+
+
+## Milestone 4 Continued
+```{r}
+ democracy_wnp <- 
+  democracy_wnp |>
+  filter(
+    !is.na(Democracy_Index),
+    !is.na(Prop_Seats)
+  ) |>
+  mutate(Prop_Seats = as.numeric(str_remove(Prop_Seats, "%")))
+democracy_wnp
+```
+
+```{r, eval = F}
+library(ggplot2)
+ggplot(democracy_wnp, aes(x = Prop_Seats)) +
+  geom_histogram(bins = 20) +
+  labs(
+    title = "Distribution of Women's Representation in National Parliaments",
+    x = "Percentage of Seats Held by Women",
+    y = "Number of Countries"
+  )
+```
+This anaylsis uses a cross-sectional research design; it compares countries at a single point in time (2024). The data combines two sources: The World Bank dataset on women in national legislatures and the Democracy Index, which was accessed through Our World in Data. The data set, which was merged, includes 139 countries. It allows for a look into the relationship between democracy and women represented in politics. The dependent variable in this study is the percentage of seats held by women in national legislatures. It is calculated by seats held by women divided by total number of seats, multiplied by 100. The scale is 0-100. The independent variable is the country's level of democracy, found through using the Democracy Index. The index is made through assessments of elected political leaders, elections, voting rights,  freedom of expression, and freedom of association. The score ranges from 0-10. (10 being more democratic). 
+
+The figure above displays the distribution of the percentage of women in national parliaments across countries. The distribution looks unimodal, as most countries are clustered around the 20-40% mark. The center of the distribution looks to be around the 30% mark, which means that women hold around a third of legislative seats in most countries. Though, there is a range of percentages, some countries have below 20% and some have above 50%. The distribution indicates that women remain underrepresented in many countries.
+
+Support for my hypothesis would be shown by a positive relationship between democracy levels and the percentage of women in parliament. This means that the more democratic a country is, the higher levels of women they would have represented. A rejection for my hypothesis would be shown by little to no relationship between democracy and percentage of women in parliament. Meaning that the higher levels of democracy a country has is not associated with more representation of women in legislatures. 
+
+## Results Section
+Scatter plot, regression, and analysis
+
+```{r}
+ggplot(democracy_wnp, aes(x = Democracy_Index, y= Prop_Seats)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = T) +
+  labs(
+    title = "Relationship Between Democracy and Women's Representation in Gov't",
+    x = "Democracy Level (0-10)",
+    y = "Women in Parliament (%)"
+  )
+```
+```{r}
+library(modelsummary)
+```
+```{r}
+model <- lm(Prop_Seats ~ Democracy_Index, data = democracy_wnp)
+model
+```
+```{r}
+summary(model)
+```
+
+```{r}
+modelsummary(model,
+             fmt = 2,
+             stars = T,
+             title = "Regression Results of Democracy and Women's Representation"
+          )
+```
+
 
