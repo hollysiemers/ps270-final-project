@@ -95,3 +95,38 @@ This anaylsis uses a cross-sectional research design; it compares countries at a
 
 The figure above displays the distribution of the percentage of women in national parliaments across countries. The distribution looks unimodal, as most countries are clustered around the 20-40% mark. The center of the distribution looks to be around the 30% mark, which means that women hold around a third of legislative seats in most countries. Though, there is a range of percentages, some countries have below 20% and some have above 50%. The distribution indicates that women remain underrepresented in many countries.
 
+Support for my hypothesis would be shown by a positive relationship between democracy levels and the percentage of women in parliament. This means that the more democratic a country is, the higher levels of women they would have represented. A rejection for my hypothesis would be shown by little to no relationship between democracy and percentage of women in parliament. Meaning that the higher levels of democracy a country has is not associated with more representation of women in legislatures. 
+
+## Results Section
+Scatter plot, regression, and analysis
+
+```{r}
+ggplot(democracy_wnp, aes(x = Democracy_Index, y= Prop_Seats)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = T) +
+  labs(
+    title = "Relationship Between Democracy and Women's Representation in Gov't",
+    x = "Democracy Level (0-10)",
+    y = "Women in Parliament (%)"
+  )
+```
+```{r}
+library(modelsummary)
+```
+```{r}
+model <- lm(Prop_Seats ~ Democracy_Index, data = democracy_wnp)
+model
+```
+```{r}
+summary(model)
+```
+
+```{r}
+modelsummary(model,
+             fmt = 2,
+             stars = T,
+             title = "Regression Results of Democracy and Women's Representation"
+          )
+```
+
+

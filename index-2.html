@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["democracy-index-eiu/democracy-index-eiu.csv","democracy-index-eiu/democracy-index-eiu.metadata.json","democracy-index-eiu/readme.md","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","index-2_files/anchor-4.2.2/anchor.min.js","index-2_files/bowser-1.9.3/bowser.min.js","index-2_files/distill-2.2.21/template.v2.js","index-2_files/header-attrs-2.30/header-attrs.js","index-2_files/jquery-3.6.0/jquery-3.6.0.js","index-2_files/jquery-3.6.0/jquery-3.6.0.min.js","index-2_files/jquery-3.6.0/jquery-3.6.0.min.map","index-2_files/popper-2.6.0/popper.min.js","index-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","index-2_files/tippy-6.2.7/tippy-light-border.css","index-2_files/tippy-6.2.7/tippy.css","index-2_files/tippy-6.2.7/tippy.umd.min.js","index-2_files/webcomponents-2.0.0/webcomponents.js","index.html","proportion-of-seats-held-by-women-in-national-parliaments-2/Proportion of seats held by women in national parliaments (%).csv","World Bank Women in National Parliaments - Sheet1.csv"]}
+  {"type":"character","attributes":{},"value":["democracy-index-eiu/democracy-index-eiu.csv","democracy-index-eiu/democracy-index-eiu.metadata.json","democracy-index-eiu/readme.md","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","index-2_files/anchor-4.2.2/anchor.min.js","index-2_files/bowser-1.9.3/bowser.min.js","index-2_files/distill-2.2.21/template.v2.js","index-2_files/figure-html5/unnamed-chunk-11-1.png","index-2_files/header-attrs-2.30/header-attrs.js","index-2_files/jquery-3.6.0/jquery-3.6.0.js","index-2_files/jquery-3.6.0/jquery-3.6.0.min.js","index-2_files/jquery-3.6.0/jquery-3.6.0.min.map","index-2_files/popper-2.6.0/popper.min.js","index-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","index-2_files/tippy-6.2.7/tippy-light-border.css","index-2_files/tippy-6.2.7/tippy.css","index-2_files/tippy-6.2.7/tippy.umd.min.js","index-2_files/webcomponents-2.0.0/webcomponents.js","index.html","proportion-of-seats-held-by-women-in-national-parliaments-2/Proportion of seats held by women in national parliaments (%).csv","World Bank Women in National Parliaments - Sheet1.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1725,7 +1725,142 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p>This anaylsis uses a cross-sectional research design; it compares countries at a single point in time (2024). The data combines two sources: The World Bank dataset on women in national legislatures and the Democracy Index, which was accessed through Our World in Data. The data set, which was merged, includes 139 countries. It allows for a look into the relationship between democracy and women represented in politics. The dependent variable in this study is the percentage of seats held by women in national legislatures. It is calculated by seats held by women divided by total number of seats, multiplied by 100. The scale is 0-100. The independent variable is the country’s level of democracy, found through using the Democracy Index. The index is made through assessments of elected political leaders, elections, voting rights, freedom of expression, and freedom of association. The score ranges from 0-10. (10 being more democratic).</p>
 <p>The figure above displays the distribution of the percentage of women in national parliaments across countries. The distribution looks unimodal, as most countries are clustered around the 20-40% mark. The center of the distribution looks to be around the 30% mark, which means that women hold around a third of legislative seats in most countries. Though, there is a range of percentages, some countries have below 20% and some have above 50%. The distribution indicates that women remain underrepresented in many countries.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Support for my hypothesis would be shown by a positive relationship between democracy levels and the percentage of women in parliament. This means that the more democratic a country is, the higher levels of women they would have represented. A rejection for my hypothesis would be shown by little to no relationship between democracy and percentage of women in parliament. Meaning that the higher levels of democracy a country has is not associated with more representation of women in legislatures.</p>
+<h2 id="results-section">Results Section</h2>
+<p>Scatter plot, regression, and analysis</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>democracy_wnp</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Democracy_Index</span>, y<span class='op'>=</span> <span class='va'>Prop_Seats</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"lm"</span>, se <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"Relationship Between Democracy and Women's Representation in Gov't"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Democracy Level (0-10)"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Women in Parliament (%)"</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index-2_files/figure-html5/unnamed-chunk-11-1.png" alt="" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://modelsummary.com'>modelsummary</a></span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>Prop_Seats</span> <span class='op'>~</span> <span class='va'>Democracy_Index</span>, data <span class='op'>=</span> <span class='va'>democracy_wnp</span><span class='op'>)</span></span>
+<span><span class='va'>model</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = Prop_Seats ~ Democracy_Index, data = democracy_wnp)
+
+Coefficients:
+    (Intercept)  Democracy_Index  
+          21.41             1.22  </code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = Prop_Seats ~ Democracy_Index, data = democracy_wnp)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-25.991  -7.859  -0.184   8.357  38.317 
+
+Coefficients:
+                Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      21.4078     2.6194   8.173  1.8e-13 ***
+Democracy_Index   1.2200     0.4376   2.788  0.00606 ** 
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 11.85 on 137 degrees of freedom
+Multiple R-squared:  0.05369,   Adjusted R-squared:  0.04678 
+F-statistic: 7.773 on 1 and 137 DF,  p-value: 0.006058</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://modelsummary.com/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>model</span>,</span>
+<span>             fmt <span class='op'>=</span> <span class='fl'>2</span>,</span>
+<span>             stars <span class='op'>=</span> <span class='cn'>T</span>,</span>
+<span>             title <span class='op'>=</span> <span class='st'>"Regression Results of Democracy and Women's Representation"</span></span>
+<span>          <span class='op'>)</span></span></code></pre>
+</div>
+<table style="width:40%;">
+<caption>Regression Results of Democracy and Women’s Representation</caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><ol type="1">
+<li></li>
+</ol></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td>21.41***</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>(2.62)</td>
+</tr>
+<tr class="odd">
+<td>Democracy_Index</td>
+<td>1.22**</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>(0.44)</td>
+</tr>
+<tr class="odd">
+<td>Num.Obs.</td>
+<td>139</td>
+</tr>
+<tr class="even">
+<td>R2</td>
+<td>0.054</td>
+</tr>
+<tr class="odd">
+<td>R2 Adj.</td>
+<td>0.047</td>
+</tr>
+<tr class="even">
+<td>AIC</td>
+<td>1085.7</td>
+</tr>
+<tr class="odd">
+<td>BIC</td>
+<td>1094.5</td>
+</tr>
+<tr class="even">
+<td>Log.Lik.</td>
+<td>-539.837</td>
+</tr>
+<tr class="odd">
+<td>RMSE</td>
+<td>11.76</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td colspan="2"><ul>
+<li>p &lt; 0.1, * p &lt; 0.05, <strong>
+p &lt; 0.01, </strong>* p &lt; 0.001</li>
+</ul></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
